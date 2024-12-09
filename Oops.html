@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="Name"></p>
+    <p class="Tuoi"></p>
+    <p class="callfunction"></p>
+    <p id="NameAnimal"></p>
+    <p id="AgeAnimal"></p>
+    <p id="functionanimal"></p>
+    <script>
+        let human = {
+             name: 'Tam',
+             age: 16,
+             a:function(){
+                return "tôi ngủ lúc 3h sáng";  // Thêm return
+            }
+     };
+     let b = 'name'
+
+     human[b]= 'Diem'
+
+     console.log(`tên của bạn là gì: ${human['name']}`)
+     console.log(`bạn bao nhiêu tuổi? ${human.age}`)
+     console.log(human.a(),human)
+     document.getElementsByClassName('Name')[0].innerHTML=`tên của bạn là gì: ${human.name}`
+     document.getElementsByClassName("Tuoi")[0].innerHTML=`bạn bao nhiêu tuổi? ${human.age}`
+     document.getElementsByClassName("callfunction")[0].innerHTML=`${human.a()}`
+
+
+     let animal = {
+        Name: "Lion",
+        Age:3,
+        tackle:function(){
+            return "tấn công bằng cách cắn";
+        }
+     }; 
+     let newnameanimal='Name'
+     animal[newnameanimal]='Tiger'
+     document.getElementById("NameAnimal").innerHTML= `tên ủa động vật này là:${animal['Name']}`
+     document.getElementById("AgeAnimal").innerHTML=`tuổi của ${animal['Name']} này là ${animal.Age}`
+     document.getElementById("functionanimal").innerHTML= animal.tackle()
+
+     </script>
+</body>
+   
+</html>
