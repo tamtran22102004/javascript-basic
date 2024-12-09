@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Document</title>
+    
+</head>
+    
+<body>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <p class="demo"></p>
+    <script>
+        //đây là một object
+        let human={
+            name:'tâm',
+            age:16
+        };
+    console.log(`tên của tôi là: ${human.name}`)
+    console.log(`tuổi của ${human.name} là: ${human.age}`)    
+
+
+    //đây là một mảng của object
+    let b = [
+        {name:'tâm',age:20},
+        {human:'người sói',age:15}
+    ]
+    console.log(typeof b,b)
+
+
+    //đây là mảng của một số 
+    a = [0,1,2,3,4,5,6,7,8,9]
+    console.log(typeof a,a);
+    //đây là mảng cửa string
+    let c=['hello','hi','messi']
+    console.log(typeof c,c)
+
+    
+    
+    // train một xíu
+    for(let i=0;i<10;i++){
+        document.getElementsByClassName('demo')[i].innerHTML= a[i];
+    }
+
+
+    </script>
+</body>
+</html>
