@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <p>học về callback</p>
+<body>
+    
+    <script>
+        let sum = (a,b,callback)=>{
+            tong = a+b;
+            // setTimeout(()=>{
+            //     callback(tong);
+            // },1000);
+            let i=0;
+            timer = setInterval(()=>{
+                callback(tong);
+                i++;
+                if(i===5){
+                    clearInterval(timer)
+                }
+
+            },1000)
+        }
+        let printSum = (sum)=>{
+            console.log("a+b=",sum);
+        }
+        sum(10,5,printSum)
+
+    </script>
+</body>
+</html>
