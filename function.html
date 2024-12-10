@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let b = 5;
+        // let a = 5;
+        // let c = sum(6, 10)
+        // let d = helloworld();
+        // function sum(a,b){
+        //     return a+b
+        // }
+        // function helloworld(){
+        //     return "hello world"
+        // }
+        // console.log(sum(a,b))
+        // console.log(c)
+        // console.log(helloworld())
+        // console.log(d)
+        // function getName(a,b){
+        //     return a+b;
+        // }
+        // console.log(getName(10,9))
+
+        let sum = (a,b)=>{
+            return a+b;
+        }
+        let obj = {
+            Name:'Tam',
+            age: 16,
+            getName:function(){
+                return `${this.Name} ${this.age}`;
+            }
+        };
+        console.log(obj.getName());
+    </script>
+</body>
+</html>
