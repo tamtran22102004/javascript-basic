@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        a=['tttt','ttt','t','ttttt','ttt','tt','t','tttttt']
+        b=[10,4,3,8,1]
+        c=[{name:'tam',age:16},
+            {name:'hoàng',age:20},
+            {name:'quý',age:15},
+            {name:'trường',age:11}
+        ]
+        a.sort((a,b)=>{
+            a.length - b.length;
+        })
+        console.log(a);
+        b.sort((a,b)=> a - b)
+        console.log(b)
+        c.sort((a,b)=>{
+            return a.name.length - b.name.length
+        })
+        console.log(c)
+        let d = (a)=>{
+            return a+1;
+        };
+        console.log(d(1))
+    </script>
+</body>
+</html>

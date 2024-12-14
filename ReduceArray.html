@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr = [0,1,2,3,4];
+        let reduce = arr.reduce((prevalue,currentvalue)=>{
+            return prevalue+currentvalue;
+        },10)
+        console.log(reduce);
+        human=[{name:'tâm',age:16},
+        {name:'trường',age:16},
+        {name:'quý',age:16},
+        {name:'hoàng',age:16}]
+
+        let reduce1 = human.reduce((prevValue,currentValue)=>{
+            console.log(currentValue)
+
+            return [...prevValue, currentValue];
+           },[{name:'tâm',age:20}]);
+    </script>
+</body>
+</html>
