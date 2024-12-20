@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const callback = (errow,data)=>{
+            console.log(">>calling back:", errow,data);
+        }
+        
+
+
+        function todos(id,callback){
+            var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                // console.log(xhttp.responseText);
+                const data = JSON.parse(xhttp.responseText)
+                const datastring = JSON.stringify(data)
+                // console.log(data);
+                // console.log(datastring)
+                // console.log(xhttp.responseText)
+                callback(undefined,xhttp.responseText)
+                
+            }
+        
+        };
+       
+        xhttp.open("GET", `https://jsonplaceholder.typicode.com/todos/${id}`, true);
+        xhttp.send();
+        }
+        for(let i=1;i<=10;i++){
+            todos(i,(errow,data)=>{
+            if(errow){
+                console.log('>>calling callback with errow:',errow)
+            }
+            else{
+                console.log('>>calling callback with data:',data)
+            }
+
+        });
+        }
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        hamasync = ()=>{
+            fetch('https://jsonplaceholder.typicode.com/todos/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userId: 1,
+                title: 'Learn JavaScript',
+                completed: false
+            })
+        })
+        .then(respone => respone.json())
+        .then(data => console.log(data))
+        .catch(error => console.log('Error:', error));
+        }
+        hamasync();
+        
+
+
+        promise = (id)=>{
+            return new Promise((resolve,reject)=>{
+                fetch('https://jsonplaceholder.typicode.com/todos/')
+                .then(respone=>respone.json())
+                .then(data=>{
+                    let UserId1= data.filter(item=>{
+                        return item.id ===id;
+
+                    
+                    })
+                    if(UserId1.length===0)
+                    {
+                        reject("Không tìm thấy dữ liệu với ID: " + id);
+                    }
+                    else{
+                        resolve({ message: `Dữ liệu của các user có id=${id}`, data: UserId1 });
+                    }
+                })
+                
+            })
+        }
+        promise(1).then(data=>console.log(data)).catch(error=>console.log(error))
+    </script>
+</body>
+</html>
